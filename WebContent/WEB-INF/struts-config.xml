@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="User" type="com.divya.Pojo.User"/>
+        <form-bean name="Employee" type="com.divya.Pojo.Employee"/>
+        <form-bean name="Department" type="com.divya.Pojo.Depatment"/>
+    </form-beans>
+
+    <action-mappings>
+        <action input="/index.jsp" name="User" path="/home" scope="session" type="com.divya.Action.AppAction">
+            <forward name="success" path="/success.jsp" />
+            <forward name="failure" path="/failure.jsp" />
+        </action>
+        
+        <action input="/add.jsp" name="addUser" path="/add" scope="session" type="com.divya.Action.InsertAction">
+            <forward name="success" path="/success.jsp" />
+            <forward name="failure" path="/failure.jsp" />
+        </action>
+              
+        <action input="/update.jsp" name="User" path="/update" scope="session" type="com.divya.Action.UpdateAction">
+            <forward name="success" path="/success.jsp" />
+            <forward name="failure" path="/failure.jsp" />
+        </action>
+        
+        <action input="/delete.jsp" name="User" path="/delete" scope="session" type="com.divya.Action.DeleteAction">
+            <forward name="success" path="/success.jsp" />
+            <forward name="failure" path="/failure.jsp" />
+        </action>
+        
+        <action input="/viewDetails.jsp" name="User" path="/view" scope="session" type="com.divya.Action.SelectAction">
+            <forward name="success" path="/success.jsp" />
+            <forward name="failure" path="/failure.jsp" />
+        </action>
+    </action-mappings>
+</struts-config>
